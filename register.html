@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% if message%}
+    {{ message | safe }}
+{% endif %}
+
+{% if message%}
+    {{ password_challange | safe }}
+{% endif %}
+
+<div>
+<form action="/registrationbutton", method="POST">
+  <div>
+  <div>
+    <input type="text" placeholder="input first name" name="First_name">
+  </div>
+  <div>
+    <input type="text" placeholder="input last name" name="Last_name"
+  </div>
+  <input type="text" placeholder="input email" name="email">
+  </div>
+  <div>
+  <input type="password" placeholder="input password" name="password1">
+ </div>
+ <div>
+ <input type="password" placeholder="confirm password" name="password2">
+ </div>
+ <button>Register</button>
+  </form>
+</div>
+
+<div>
+  <p>I already have an account</p>
+  <a href="{{url_for("login")}}">Login</a>
+</div>
+{% endblock %}
